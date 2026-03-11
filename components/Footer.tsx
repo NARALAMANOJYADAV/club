@@ -113,7 +113,7 @@ export default function Footer() {
 
           <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
              <p className="text-xs font-bold font-space uppercase tracking-widest text-foreground/60 opacity-50">
-                © 2025 AI CLUB DEPARTMENT • ALL RIGHTS RESERVED
+                © 2026 AI CLUB DEPARTMENT • ALL RIGHTS RESERVED
              </p>
              <div className="flex gap-8">
                 <span className="text-xs font-bold font-space uppercase tracking-widest text-foreground/60 opacity-50 hover:text-white transition-colors cursor-pointer">Privacy Policy</span>
