@@ -6,7 +6,7 @@ import { useRef, useState, useMemo } from "react";
 import * as THREE from "three";
 
 function NeuralBrain() {
-  const pointsRef = useRef<any>();
+  const pointsRef = useRef<any>(null);
   const [positions] = useState(() => {
     const list = new Float32Array(2000 * 3);
     for (let i = 0; i < 2000; i++) {
