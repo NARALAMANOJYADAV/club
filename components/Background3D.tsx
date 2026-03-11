@@ -1,29 +1,32 @@
 "use client";
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
-import { Points, PointMaterial, Stars, Float, MeshDistortMaterial, Sphere, Torus, Box, Tetrahedron, Icosahedron, TorusKnot, Octahedron } from "@react-three/drei";
+import { Points, PointMaterial, Stars, Float, MeshDistortMaterial, Sphere, Icosahedron, TorusKnot, Octahedron } from "@react-three/drei";
 import { useRef, useState, useMemo, Suspense, useEffect } from "react";
 import * as THREE from "three";
-import { useScroll, useTransform } from "framer-motion";
+import { useScroll } from "framer-motion";
 
-// Home: Complex Neural Plexus
-function NeuralPlexus() {
+// Zone 1: Neural Brain (Home)
+function NeuralBrainZone() {
     const pointsRef = useRef<THREE.Points>(null!);
-    const count = 1000;
+    const count = 3000;
     const [positions] = useState(() => {
         const list = new Float32Array(count * 3);
         for (let i = 0; i < count; i++) {
-            list[i * 3] = (Math.random() - 0.5) * 30;
-            list[i * 3 + 1] = (Math.random() - 0.5) * 30;
-            list[i * 3 + 2] = (Math.random() - 0.5) * 20;
+            const radius = 10;
+            const theta = Math.random() * Math.PI * 2;
+            const phi = Math.acos(2 * Math.random() - 1);
+            list[i * 3] = radius * Math.sin(phi) * Math.cos(theta);
+            list[i * 3 + 1] = radius * Math.sin(phi) * Math.sin(theta);
+            list[i * 3 + 2] = radius * Math.cos(phi);
         }
         return list;
     });
 
-    useFrame((state) => {
-        const time = state.clock.getElapsedTime();
+    useFrame((state, delta) => {
         if (pointsRef.current) {
-            pointsRef.current.rotation.y = time * 0.05;
+            pointsRef.current.rotation.y += delta * 0.1;
+            pointsRef.current.rotation.x += delta * 0.03;
         }
     });
 
@@ -33,24 +36,22 @@ function NeuralPlexus() {
                 <PointMaterial
                     transparent
                     color="#8b5cf6"
-                    size={0.1}
+                    size={0.15}
                     sizeAttenuation={true}
                     depthWrite={false}
                     blending={THREE.AdditiveBlending}
-                    opacity={0.6}
                 />
             </Points>
-            {/* Lines between points could be heavy, using a simple glow sphere mesh instead */}
-            <mesh scale={[15, 15, 15]}>
-                <sphereGeometry args={[1, 32, 32]} />
-                <meshBasicMaterial color="#4f46e5" wireframe transparent opacity={0.03} />
+            <mesh>
+                <sphereGeometry args={[10.2, 32, 32]} />
+                <meshBasicMaterial color="#6366f1" wireframe transparent opacity={0.05} />
             </mesh>
         </group>
     );
 }
 
-// About: Data Flow / Particles
-function DataFlow() {
+// Zone 2: Torus Knot (About)
+function TorusKnotZone() {
     const meshRef = useRef<any>(null!);
     useFrame((state, delta) => {
         if (meshRef.current) {
@@ -59,18 +60,16 @@ function DataFlow() {
         }
     });
     return (
-        <group>
-            <Float speed={2} rotationIntensity={1} floatIntensity={2}>
-                <TorusKnot ref={meshRef} args={[8, 2.5, 100, 16]}>
-                    <meshBasicMaterial color="#3b82f6" wireframe transparent opacity={0.3} />
-                </TorusKnot>
-            </Float>
-        </group>
+        <Float speed={2} rotationIntensity={1} floatIntensity={2}>
+            <TorusKnot ref={meshRef} args={[12, 3, 100, 16]}>
+                <meshBasicMaterial color="#3b82f6" wireframe transparent opacity={0.2} />
+            </TorusKnot>
+        </Float>
     );
 }
 
-// Faculty: Knowledge Graph Nodes
-function KnowledgeGraph() {
+// Zone 3: Octahedron (Faculty)
+function OctahedronZone() {
     const meshRef = useRef<any>(null!);
     useFrame((state, delta) => {
         if (meshRef.current) {
@@ -79,18 +78,16 @@ function KnowledgeGraph() {
         }
     });
     return (
-        <group>
-            <Float speed={2} rotationIntensity={2} floatIntensity={1.5}>
-                <Octahedron ref={meshRef} args={[10, 0]}>
-                    <meshBasicMaterial color="#c084fc" wireframe transparent opacity={0.3} />
-                </Octahedron>
-            </Float>
-        </group>
+        <Float speed={2} rotationIntensity={2} floatIntensity={1.5}>
+            <Octahedron ref={meshRef} args={[12, 0]}>
+                <meshBasicMaterial color="#c084fc" wireframe transparent opacity={0.2} />
+            </Octahedron>
+        </Float>
     );
 }
 
-// Timeline: Time Vortex
-function TimeVortex() {
+// Zone 4: Distorted Sphere (Timeline)
+function SphereZone() {
     const meshRef = useRef<any>(null!);
     useFrame((state, delta) => {
         if (meshRef.current) {
@@ -100,18 +97,16 @@ function TimeVortex() {
     });
 
     return (
-        <group>
-            <Float speed={3} rotationIntensity={1} floatIntensity={1}>
-                <Sphere ref={meshRef} args={[8, 32, 32]}>
-                     <MeshDistortMaterial color="#f472b6" speed={1.5} distort={0.5} wireframe transparent opacity={0.4} />
-                </Sphere>
-            </Float>
-        </group>
+        <Float speed={3} rotationIntensity={1} floatIntensity={1}>
+            <Sphere ref={meshRef} args={[10, 32, 32]}>
+                 <MeshDistortMaterial color="#f472b6" speed={1.5} distort={0.5} wireframe transparent opacity={0.3} />
+            </Sphere>
+        </Float>
     );
 }
 
-// Coordinators: Community Cluster
-function CommunityCluster() {
+// Zone 5: Icosahedron (Coordinators)
+function IcosahedronZone() {
     const meshRef = useRef<any>(null!);
     useFrame((state, delta) => {
         if (meshRef.current) {
@@ -121,60 +116,58 @@ function CommunityCluster() {
     });
 
     return (
-        <group>
-             <Float speed={2} rotationIntensity={1.5} floatIntensity={2}>
-                 <Icosahedron ref={meshRef} args={[10, 1]}>
-                      <meshBasicMaterial color="#34d399" wireframe transparent opacity={0.3} />
-                 </Icosahedron>
-             </Float>
-        </group>
+         <Float speed={2} rotationIntensity={1.5} floatIntensity={2}>
+             <Icosahedron ref={meshRef} args={[15, 1]}>
+                  <meshBasicMaterial color="#34d399" wireframe transparent opacity={0.2} />
+             </Icosahedron>
+         </Float>
     );
 }
 
-function Scene({ scrollProgress }: { scrollProgress: any }) {
+function SceneViewer({ scrollProgress }: { scrollProgress: any }) {
     const { camera } = useThree();
     const [activeZone, setActiveZone] = useState("home");
 
     useFrame(() => {
         const p = scrollProgress.get();
-        // Determine zone based on scroll 0-1
-        if (p < 0.15) setActiveZone("home");
-        else if (p < 0.35) setActiveZone("about");
-        else if (p < 0.55) setActiveZone("faculty");
-        else if (p < 0.75) setActiveZone("timeline");
+        if (p < 0.2) setActiveZone("home");
+        else if (p < 0.4) setActiveZone("about");
+        else if (p < 0.6) setActiveZone("faculty");
+        else if (p < 0.8) setActiveZone("timeline");
         else setActiveZone("coordinators");
 
-        // Camera movement: smooth vertical drift + lookAt
-        camera.position.y = -p * 100;
-        camera.lookAt(0, -p * 100, -50);
+        // Vertical movement of camera
+        camera.position.y = -p * 200;
+        camera.lookAt(0, -p * 200, -100);
     });
 
     return (
         <Suspense fallback={null}>
             <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} intensity={1} color="#8b5cf6" />
+            <pointLight position={[10, 10, 10]} intensity={2} color="#8b5cf6" />
             
             <group position={[0, 0, 0]}>
-                {activeZone === "home" && <NeuralPlexus />}
+                {activeZone === "home" && <NeuralBrainZone />}
             </group>
             
-            <group position={[0, -30, 0]}>
-                <DataFlow />
+            <group position={[0, -50, 0]}>
+                {activeZone === "about" && <TorusKnotZone />}
             </group>
             
-            <group position={[0, -60, 0]}>
-                <KnowledgeGraph />
+            <group position={[0, -100, 0]}>
+                {activeZone === "faculty" && <OctahedronZone />}
             </group>
 
-            <group position={[0, -90, 0]}>
-                <TimeVortex />
+            <group position={[0, -150, 0]}>
+                {activeZone === "timeline" && <SphereZone />}
             </group>
 
-            <group position={[0, -120, 0]}>
-                <CommunityCluster />
+            <group position={[0, -200, 0]}>
+                {activeZone === "coordinators" && <IcosahedronZone />}
             </group>
 
-            <fog attach="fog" args={["#000000", 10, 100]} />
+            <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+            <fog attach="fog" args={["#000000", 10, 150]} />
         </Suspense>
     );
 }
@@ -191,10 +184,10 @@ export default function Background3D() {
 
     return (
         <div className="fixed inset-0 z-[-1] pointer-events-none bg-[#030014]">
-            <Canvas camera={{ position: [0, 0, 30], fov: 60 }}>
-                <Scene scrollProgress={scrollYProgress} />
+            <Canvas camera={{ position: [0, 0, 40], fov: 60 }} dpr={[1, 2]}>
+                <SceneViewer scrollProgress={scrollYProgress} />
             </Canvas>
-            <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-80" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black opacity-60" />
         </div>
     );
 }
