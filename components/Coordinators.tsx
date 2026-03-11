@@ -7,7 +7,7 @@ import { fadeIn, staggerContainer } from "@/lib/animations";
 
 export default function Coordinators() {
   return (
-    <section id="coordinators" className="py-24 bg-black relative">
+    <section id="coordinators" className="py-24 bg-transparent relative">
        {/* Background lights */}
        <div className="absolute top-1/4 right-0 w-[400px] h-[400px] bg-secondary/5 blur-[100px] rounded-full pointer-events-none z-0" />
 

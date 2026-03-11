@@ -7,7 +7,7 @@ import { fadeIn } from "@/lib/animations";
 
 export default function Counselor() {
   return (
-    <section id="counselor" className="py-24 bg-black relative overflow-hidden">
+    <section id="counselor" className="py-24 bg-transparent relative overflow-hidden">
       {/* Background Accent */}
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-primary/5 via-transparent to-transparent pointer-events-none" />
 

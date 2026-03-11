@@ -11,7 +11,7 @@ export default function Faculty() {
   const [selectedFaculty, setSelectedFaculty] = useState<FacultyMember | null>(null);
 
   return (
-    <section id="faculty" className="py-24 bg-black relative">
+    <section id="faculty" className="py-24 bg-transparent relative">
        {/* Background accent */}
        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-primary/5 blur-[120px] rounded-full pointer-events-none z-0" />
 

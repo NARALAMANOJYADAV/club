@@ -13,7 +13,7 @@ const icons = {
 
 export default function Department() {
   return (
-    <section id="about" className="py-24 bg-black relative overflow-hidden">
+    <section id="about" className="py-24 bg-transparent relative overflow-hidden">
 
       {/* Decorative gradients */}
       <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-secondary/10 rounded-full blur-[100px] -translate-x-1/2 -translate-y-1/2 pointer-events-none z-0" />

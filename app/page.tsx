@@ -32,7 +32,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="relative min-h-screen bg-black selection:bg-primary/30">
+    <main className="relative min-h-screen bg-transparent selection:bg-primary/30">
       <Background3D />
       <LoadingAnimation />
       
@@ -56,7 +56,7 @@ export default function Home() {
              <Coordinators />
              
              {/* Simple Admin Toggle For Demo Purpose */}
-             <div className="py-10 flex justify-center bg-black">
+             <div className="py-10 flex justify-center bg-transparent">
                 <button 
                    onClick={() => setIsAdmin(!isAdmin)}
                    className="text-[10px] font-black uppercase tracking-[0.5em] text-foreground/20 hover:text-primary transition-all p-4 border border-white/5 rounded-full hover:neon-border group"

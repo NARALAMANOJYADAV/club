@@ -14,7 +14,7 @@ export default function Timeline() {
   });
 
   return (
-    <section id="timeline" className="py-24 bg-black overflow-hidden">
+    <section id="timeline" className="py-24 bg-transparent overflow-hidden">
       <div className="container mx-auto px-6 relative z-10 mb-16">
         <motion.div 
           variants={fadeIn("up", 0.2)}

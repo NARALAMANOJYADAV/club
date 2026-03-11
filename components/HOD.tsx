@@ -7,7 +7,7 @@ import { fadeIn } from "@/lib/animations";
 
 export default function HOD() {
   return (
-    <section id="hod" className="py-24 bg-black relative overflow-hidden">
+    <section id="hod" className="py-24 bg-transparent relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <motion.div 
           variants={fadeIn("down", 0.2)}
