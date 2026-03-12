@@ -1,11 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Linkedin, Twitter, Mail, Bell, X } from "lucide-react";
 import Image from "next/image";
 import { fadeIn } from "@/lib/animations";
 
 export default function HOD() {
+  const [showNotice, setShowNotice] = useState(true);
   return (
     <section id="hod" className="py-24 bg-transparent relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
@@ -31,7 +33,7 @@ export default function HOD() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
             {/* Image Section */}
-            <div className="relative h-[500px] md:h-auto overflow-hidden group">
+            <div className="relative h-[300px] sm:h-[400px] md:h-auto overflow-hidden group">
               <Image 
                 src="/hod.jpg" 
                 alt="Dr. A. Narayana Rao" 
@@ -47,7 +49,7 @@ export default function HOD() {
             </div>
 
             {/* Content Section */}
-            <div className="p-10 md:p-16 flex flex-col justify-center gap-8 bg-white/[0.02]">
+            <div className="p-8 sm:p-10 md:p-16 flex flex-col justify-center gap-6 md:gap-8 bg-white/[0.02]">
               <div className="space-y-2">
                 <h3 className="text-4xl md:text-5xl font-space font-black text-white">
                     Dr. A. Narayana Rao
@@ -78,26 +80,33 @@ export default function HOD() {
         </motion.div>
       </div>
 
-      {/* Floating Notification (as seen in image) */}
-      <motion.div 
-        initial={{ x: 300, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ delay: 2, duration: 0.8 }}
-        className="fixed bottom-8 right-8 z-[60] w-[350px] p-6 glass-morphism rounded-2xl border-white/10 shadow-3xl flex gap-4 backdrop-blur-3xl group"
-      >
-        <div className="w-12 h-12 rounded-xl bg-blue-600/20 flex items-center justify-center flex-shrink-0">
-           <Bell className="text-blue-500 w-6 h-6 animate-swing" />
-        </div>
-        <div className="flex-grow">
-            <h4 className="text-white font-bold text-sm mb-1 flex justify-between">
-                Notice
-                <X className="w-4 h-4 cursor-pointer opacity-50 hover:opacity-100" />
-            </h4>
-            <p className="text-xs text-foreground/60 leading-tight">
-                Welcome to AI & DS Portal! Explore our new 2026 curriculum highlights.
-            </p>
-        </div>
-      </motion.div>
+      {/* Floating Notification - dismissible + mobile friendly */}
+      <AnimatePresence>
+        {showNotice && (
+          <motion.div 
+            initial={{ x: 300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 300, opacity: 0 }}
+            transition={{ delay: 2, duration: 0.8 }}
+            className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-[60] w-[calc(100vw-2rem)] sm:w-[320px] p-4 sm:p-5 glass-morphism rounded-2xl border-white/10 shadow-2xl flex gap-3 backdrop-blur-3xl"
+          >
+            <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center flex-shrink-0">
+               <Bell className="text-blue-500 w-5 h-5 animate-swing" />
+            </div>
+            <div className="flex-grow min-w-0">
+                <div className="flex justify-between items-start mb-1">
+                  <h4 className="text-white font-bold text-sm">Notice</h4>
+                  <button onClick={() => setShowNotice(false)} className="text-white/50 hover:text-white transition-colors p-0.5 flex-shrink-0">
+                    <X className="w-4 h-4" />
+                  </button>
+                </div>
+                <p className="text-xs text-foreground/60 leading-snug">
+                    Welcome to AI COMMUNITY! Explore our 2026 curriculum highlights.
+                </p>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

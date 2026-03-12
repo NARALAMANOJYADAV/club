@@ -24,7 +24,7 @@ export default function Register() {
                 <Link href="/" className="inline-flex items-center gap-2 text-foreground/50 hover:text-white transition-colors text-sm font-bold uppercase tracking-wider mb-6">
                    <ArrowLeft className="w-4 h-4" /> Back to Home
                 </Link>
-                <h1 className="text-4xl md:text-5xl font-space font-black glow-text mb-2">Join AI CLUB</h1>
+                <h1 className="text-4xl md:text-5xl font-space font-black glow-text mb-2">Join AI COMMUNITY</h1>
                 <p className="text-foreground/60 text-lg">Ignite your journey into artificial intelligence.</p>
              </div>
 

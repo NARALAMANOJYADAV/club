@@ -42,7 +42,7 @@ export default function Coordinators() {
                    <div className="absolute -inset-0.5 bg-gradient-to-r from-primary via-secondary to-accent opacity-20 group-hover:opacity-100 rounded-[2rem] blur-[2px] group-hover:blur-[8px] transition-all duration-700 pointer-events-none" />
                    
                    {/* Card Content */}
-                    <div className="relative glass-morphism p-8 rounded-[2rem] border border-white/5 transition-all overflow-hidden bg-black/40 backdrop-blur-3xl h-full flex flex-col items-center text-center gap-6">
+                    <div className="relative glass-morphism p-6 sm:p-8 rounded-[2rem] border border-white/5 transition-all overflow-hidden bg-black/40 backdrop-blur-3xl h-full flex flex-col items-center text-center gap-6">
                        {/* Avatar Area */}
                        <div className="w-24 h-24 rounded-[1.5rem] bg-gradient-to-br from-primary via-secondary to-accent p-[2px] group-hover:shadow-[0_0_20px_rgba(139,92,246,0.3)] transition-all overflow-hidden">
                           <div className="w-full h-full rounded-[1.4rem] bg-black flex items-center justify-center font-space font-black text-2xl text-white overflow-hidden">

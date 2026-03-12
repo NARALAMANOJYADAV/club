@@ -19,8 +19,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "AI CLUB | Department of Artificial Intelligence",
-  description: "Official futuristic landing page for the AI Club - Innovating the Future with AI",
+  title: "AI COMMUNITY | Department of Artificial Intelligence",
+  description: "Official futuristic landing page for the AI Community - Innovating the Future with AI",
 };
 
 export default function RootLayout({

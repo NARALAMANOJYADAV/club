@@ -10,8 +10,8 @@ export default function Hero() {
   const opacity = useTransform(scrollY, [0, 400], [1, 0]);
 
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-transparent pt-10">
-      <div className="container mx-auto px-6 z-20 relative flex flex-col items-center justify-center -mt-10">
+    <section id="home" className="relative min-h-[85vh] md:min-h-[90vh] flex items-center justify-center overflow-hidden bg-transparent pt-16 md:pt-10">
+      <div className="container mx-auto px-6 z-20 relative flex flex-col items-center justify-center -mt-6 md:-mt-10">
         <motion.div
           style={{ y: y1, opacity }}
           className="flex flex-col gap-6 text-center items-center w-full max-w-6xl mx-auto"
@@ -20,18 +20,16 @@ export default function Hero() {
             variants={fadeIn("up", 0.4)}
             initial="hidden"
             animate="show"
-            className="text-5xl sm:text-7xl md:text-8xl lg:text-[7rem] font-space font-black leading-[1] tracking-tighter mix-blend-screen"
+            className="text-4xl sm:text-7xl md:text-8xl lg:text-[7rem] font-space font-black leading-[1.1] md:leading-[1] tracking-tighter mix-blend-screen"
           >
-            <span className="text-white drop-shadow-2xl">AI CLUB</span>
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-primary">OFFICIAL PORTAL</span>
+            <span className="text-white drop-shadow-2xl text-4xl sm:text-7xl md:text-8xl lg:text-[7rem]">AI COMMUNITY</span>
           </motion.h1>
 
           <motion.div
              variants={fadeIn("up", 0.5)}
              initial="hidden"
              animate="show"
-             className="mt-4 flex flex-col items-center gap-2"
+              className="mt-4 flex flex-col items-center gap-2"
           >
              <span className="text-lg md:text-2xl text-white/80 font-medium tracking-wide">Department of</span>
              <span className="text-xl md:text-3xl lg:text-4xl text-blue-300 font-bold drop-shadow-md">Artificial Intelligence & Data Science</span>

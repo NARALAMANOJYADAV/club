@@ -38,7 +38,7 @@ export default function FacultyModal({ faculty, onClose }: FacultyModalProps) {
             <X className="w-6 h-6" />
           </button>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 p-10">
+          <div className="grid grid-cols-1 md:grid-cols-5 gap-10 p-6 sm:p-10 max-h-[85vh] overflow-y-auto custom-scrollbar">
             {/* Left: Image Side */}
             <div className="md:col-span-2 flex flex-col gap-6">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden glass-morphism relative group">

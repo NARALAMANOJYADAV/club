@@ -42,7 +42,7 @@ export default function Department() {
           {/* Main Info Card */}
           <motion.div 
             variants={fadeIn("up", 0.3)}
-            className="md:col-span-2 lg:col-span-1 glass-morphism p-10 rounded-3xl neon-border hover:shadow-primary/20 transition-all flex flex-col gap-6"
+            className="md:col-span-2 lg:col-span-1 glass-morphism p-6 sm:p-10 rounded-3xl neon-border hover:shadow-primary/20 transition-all flex flex-col gap-6"
           >
             <div className="w-16 h-16 rounded-2xl bg-primary/20 flex items-center justify-center">
               <Rocket className="text-primary w-8 h-8" />
@@ -56,7 +56,7 @@ export default function Department() {
           {/* Vision & Mission Cards */}
           <motion.div 
             variants={fadeIn("up", 0.4)}
-            className="glass-morphism p-10 rounded-3xl border-white/5 hover:neon-border transition-all flex flex-col gap-6"
+            className="glass-morphism p-6 sm:p-10 rounded-3xl border-white/5 hover:neon-border transition-all flex flex-col gap-6"
           >
             <div className="w-16 h-16 rounded-2xl bg-secondary/20 flex items-center justify-center">
               <Eye className="text-secondary w-8 h-8" />
@@ -69,7 +69,7 @@ export default function Department() {
 
           <motion.div 
             variants={fadeIn("up", 0.5)}
-            className="glass-morphism p-10 rounded-3xl border-white/5 hover:neon-border transition-all flex flex-col gap-6"
+            className="glass-morphism p-6 sm:p-10 rounded-3xl border-white/5 hover:neon-border transition-all flex flex-col gap-6"
           >
             <div className="w-16 h-16 rounded-2xl bg-accent/20 flex items-center justify-center">
               <Target className="text-accent w-8 h-8" />

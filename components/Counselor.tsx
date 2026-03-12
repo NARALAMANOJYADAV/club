@@ -34,7 +34,7 @@ export default function Counselor() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
             {/* Image Section */}
-            <div className="relative h-[500px] md:h-auto overflow-hidden group">
+            <div className="relative h-[300px] sm:h-[400px] md:h-auto overflow-hidden group">
               <Image 
                 src="/mekala_sivaprathap.jpg" 
                 alt="Mekala Sivaprathap Reddy" 
@@ -50,20 +50,19 @@ export default function Counselor() {
             </div>
 
             {/* Content Section */}
-            <div className="p-10 md:p-16 flex flex-col justify-center gap-8 bg-black/40 backdrop-blur-3xl">
+            <div className="p-8 sm:p-10 md:p-16 flex flex-col justify-center gap-6 md:gap-8 bg-black/40 backdrop-blur-3xl">
               <div className="space-y-4">
                 <div className="space-y-2">
                   <h3 className="text-4xl md:text-5xl font-space font-black text-white">
                       Mekala Sivaprathap Reddy
                   </h3>
-                  <p className="text-secondary font-bold tracking-widest uppercase text-sm">
-                      Counselor & Faculty Coordinator, AI CLUB
-                  </p>
+                   <p className="text-secondary font-bold tracking-widest uppercase text-sm">
+                       Counselor & Faculty Coordinator, AI COMMUNITY
+                   </p>
                 </div>
-                
-                <p className="text-foreground/70 text-lg leading-relaxed">
-                   Dedicated to mentoring students and fostering an environment where innovation meets practical AI application. Under his guidance, the AI CLUB aims to bridge the gap between academic theory and industry reality.
-                </p>
+                                <p className="text-foreground/70 text-lg leading-relaxed">
+                    Dedicated to mentoring students and fostering an environment where innovation meets practical AI application. Under his guidance, the AI COMMUNITY aims to bridge the gap between academic theory and industry reality.
+                 </p>
               </div>
 
               <div className="grid grid-cols-3 gap-6">

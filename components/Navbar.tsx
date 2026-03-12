@@ -83,7 +83,7 @@ export default function Navbar() {
               <Brain className="text-white w-full h-full" />
             </motion.div>
             <span className="text-xl font-space font-bold tracking-tighter glow-text">
-              AI <span className="text-primary group-hover:text-white transition-colors">CLUB</span>
+              AI <span className="text-primary group-hover:text-white transition-colors">COMMUNITY</span>
             </span>
           </Link>
 
@@ -168,7 +168,7 @@ export default function Navbar() {
               exit={{ opacity: 0, height: 0 }}
               className="md:hidden glass-morphism border-b border-white/10 overflow-hidden bg-black/90 backdrop-blur-3xl"
             >
-              <div className="flex flex-col px-6 py-4 gap-4">
+              <div className="flex flex-col px-6 py-8 gap-6 max-h-[80vh] overflow-y-auto">
                 {navItems.map((item) => (
                   <div key={item.name} className="flex flex-col">
                     {item.isDropdown ? (
@@ -200,11 +200,11 @@ export default function Navbar() {
                 ))}
                 
                 <button 
-                  onClick={() => {
-                    setIsOpen(false);
-                    setShowRegisterModal(true);
-                  }}
-                  className="mt-6 px-8 py-3 w-full rounded-2xl bg-gradient-to-r from-primary to-secondary text-lg font-bold text-white shadow-[0_0_20px_rgba(139,92,246,0.3)]"
+                    onClick={() => {
+                        setIsOpen(false);
+                        setShowRegisterModal(true);
+                    }}
+                    className="mt-4 px-8 py-4 w-full rounded-2xl bg-gradient-to-r from-primary to-secondary text-lg font-bold text-white shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:scale-[1.02] active:scale-95 transition-all"
                 >
                   Register
                 </button>
@@ -247,7 +247,7 @@ export default function Navbar() {
                  
                  <div className="space-y-6 text-foreground/80">
                    <p className="text-sm border-l-2 border-primary pl-4 text-white">
-                     Welcome to the AI CLUB onboarding! Becoming a part of this organization requires extreme dedication, discipline, and consistent effort. Please read the primary mandates below:
+                      Welcome to the AI COMMUNITY onboarding! Becoming a part of this organization requires extreme dedication, discipline, and consistent effort. Please read the primary mandates below:
                    </p>
 
                    <ul className="space-y-4">

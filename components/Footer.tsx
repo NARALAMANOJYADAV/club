@@ -27,7 +27,7 @@ export default function Footer() {
        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-secondary/5 blur-[100px] rounded-full pointer-events-none z-0" />
 
        <div className="container mx-auto px-6 relative z-10">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20 text-center md:text-left">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 mb-20 text-center md:text-left">
              {/* Brand Side */}
              <div className="flex flex-col gap-6 items-center md:items-start">
                  <Link href="/" className="flex items-center gap-2 group">
@@ -38,7 +38,7 @@ export default function Footer() {
                         <Cpu className="text-white w-full h-full" />
                     </motion.div>
                     <span className="text-2xl font-space font-bold tracking-tighter glow-text">
-                        AI <span className="text-primary group-hover:text-white transition-colors">CLUB</span>
+                        AI <span className="text-primary group-hover:text-white transition-colors">COMMUNITY</span>
                     </span>
                 </Link>
                 <p className="text-foreground/60 leading-relaxed text-sm max-w-xs">
@@ -113,7 +113,7 @@ export default function Footer() {
 
           <div className="border-t border-white/5 pt-10 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
              <p className="text-xs font-bold font-space uppercase tracking-widest text-foreground/60 opacity-50">
-                © 2026 AI CLUB DEPARTMENT • ALL RIGHTS RESERVED
+                © 2026 AI COMMUNITY DEPARTMENT • ALL RIGHTS RESERVED
              </p>
              <div className="flex gap-8">
                 <span className="text-xs font-bold font-space uppercase tracking-widest text-foreground/60 opacity-50 hover:text-white transition-colors cursor-pointer">Privacy Policy</span>
